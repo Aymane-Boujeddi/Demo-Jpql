@@ -1,7 +1,8 @@
-target/
 .git/
 .idea/
 *.iml
 .mvn/
 mvnw
 mvnw.cmd
+target/*
+!target/*.jar
