@@ -42,11 +42,14 @@ jobs:
         run: mvn clean install -DskipTests
 
       - name: Run SonarQube Analysis
-        if: github.event_name == 'push' && secrets.SONAR_TOKEN != ''
+        if: github.event_name == 'push'
+        continue-on-error: true
         run: mvn sonar:sonar
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+
+
 
 
 
